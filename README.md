@@ -26,8 +26,8 @@ func handle(w http.ResponseWriter, r *http.Request) {
 ```
 
 The Staticer struct has two field:
-* 'RootPath': Specify path
-* 'ExtraHandler': if this is not nil, the function will be called before get a static source.
+* RootPath: Specify path
+* ExtraHandler: If this is not nil, the function will be called before responsing a static source.
 
 ```go
 type Staticer struct {
@@ -37,8 +37,8 @@ type Staticer struct {
 ```
 
 The Proxyer struct has two field: 
-* 'Addr': Proxy target ip
-* 'Hook': Called before request target, such as add head, modify body...
+* Addr: Proxy target ip
+* Hook: Function called before requesting target, such as add request head, modify request body...
 
 ```go
 type Proxyer struct {
