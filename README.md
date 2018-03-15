@@ -15,8 +15,8 @@ Start a web server with path '/' for static file, and '/proxy' for proxy:
 ```go
 func main() {
 	rootPath := flag.String("p", os.Getenv("PWD"), "Static file server path")
-	http.Handle("/", myHttp.Staticer{RootPath: *rootPath})
-	http.Handle("/proxy", myHttp.Proxyer{Addr: "http://127.0.0.1:9090", Hook: http.HandlerFunc(handle)})
+	http.Handle("/", xHttp.Staticer{RootPath: *rootPath})
+	http.Handle("/proxy", xHttp.Proxyer{Addr: "http://127.0.0.1:9090", Hook: http.HandlerFunc(handle)})
 	log.Fatal(http.ListenAndServe(":8090", nil))
 }
 
